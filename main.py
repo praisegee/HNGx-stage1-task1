@@ -17,7 +17,7 @@ def index(request: Request):
     data = {
         "slack_name": request.query_params.get("slack_name", ""),
         "current_day": today.strftime("%A"),
-        "utc_time": today,
+        "utc_time": today.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "track": request.query_params.get("track", ""),
         "github_file_url": "https://github.com/praisegee/HNGx-stage1-task1/blob/main/main.py",
         "github_repo_url": "https://github.com/praisegee/HNGx-stage1-task1",
