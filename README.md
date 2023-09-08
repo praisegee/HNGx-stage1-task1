@@ -21,7 +21,8 @@ The information required includes:
 
 #### JSON Responce
 
-`{
+```json
+{
   "slack_name": "example_name",
   "current_day": "Monday",
   "utc_time": "2023-08-21T15:04:05Z",
@@ -29,4 +30,5 @@ The information required includes:
   "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
   "github_repo_url": "https://github.com/username/repo",
   "status_code": 200
-}`
+}
+```
