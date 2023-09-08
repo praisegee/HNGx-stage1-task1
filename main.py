@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 # handle request
-@app.get("/")
+@app.get("/api")
 def index(request: Request):
     today = datetime.now(timezone.utc)
 
