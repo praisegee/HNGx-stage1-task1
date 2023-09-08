@@ -12,13 +12,20 @@ app = FastAPI()
 # handle request
 @app.get("/")
 def index(request: Request):
-    # get params from the incoming request
-    slack_name = request.query_params.get("slack_name", "")
-    track = request.query_params.get("track", "")
-    today = datetime(timezone.utc)
+    today = datetime.now(timezone.utc)
 
-    print(type(request.query_params))
-    return {"name": "PraiseGod"}
+    # response body
+    data = {
+        "slack_name": request.query_params.get("slack_name", ""),
+        "current_day": today.strftime("%A"),
+        "utc_time": today,
+        "track": request.query_params.get("track", ""),
+        "github_file_url": "https://github.com/praisegee/HNGx-stage1-task1/blob/main/main.py",
+        "github_repo_url": "https://github.com/praisegee/HNGx-stage1-task1",
+        "status_code": 200,
+    }
+
+    return data
 
 
 # run app
